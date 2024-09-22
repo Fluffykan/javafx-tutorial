@@ -26,10 +26,5 @@ dependencies {
 }
 
 application {
-    mainClass.set("Launcher")
-}
-
-shadowJar {
-    archiveBaseName = "javafx-tutorial-duke"
-    archiveClassifier = null
+    mainClass.set("app.Launcher")
 }
