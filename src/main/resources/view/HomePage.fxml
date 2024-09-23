@@ -5,7 +5,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.control.Label?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.HomeScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.HomePageController">
    <children>
       <Text layoutX="289.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is scene 2" />
       <Button layoutX="273.0" layoutY="334.0" onAction="#backToLogin" mnemonicParsing="false" text="Switch to scene 1" />

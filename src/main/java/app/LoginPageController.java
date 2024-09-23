@@ -22,10 +22,10 @@ public class LoginPageController {
     public void login(ActionEvent event) throws IOException {
         String username = nameTextField.getText();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/HomeScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/HomePage.fxml"));
         root = loader.load();
 
-        HomeScreenController scene2Controller = loader.getController();
+        HomePageController scene2Controller = loader.getController();
         scene2Controller.displayName(username);
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

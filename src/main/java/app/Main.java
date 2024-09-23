@@ -1,7 +1,6 @@
 package app;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
@@ -37,7 +36,11 @@ public class Main extends Application {
 //        loadSceneFromFxml(primaryStage);
 //        sceneManager(primaryStage);
 //        logoutScene(primaryStage);
-        imagesScene(primaryStage);
+//        imagesScene(primaryStage);
+//        verifyAge(primaryStage);
+//        checkboxDemo(primaryStage);
+//        radioBtnDemo(primaryStage);
+        datePickerDemo(primaryStage);
 
         // displays the stage
         primaryStage.show();
@@ -72,6 +75,40 @@ public class Main extends Application {
         }
 
 
+    }
+
+    private void datePickerDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/DatePickerDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void radioBtnDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/RadioButtonDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    /**
+     * this is a demo for using checkboxes
+     * @param primaryStage
+     * @throws IOException
+     */
+    private void checkboxDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/CheckboxDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    /**
+     * this is a demo for verifying user input
+     * @param primaryStage
+     * @throws IOException
+     */
+    private void verifyAge(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/VerifyAgePage.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
     }
 
     /**

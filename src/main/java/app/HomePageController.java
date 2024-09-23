@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeScreenController {
+public class HomePageController {
     @FXML
     Label nameLabel;
 
