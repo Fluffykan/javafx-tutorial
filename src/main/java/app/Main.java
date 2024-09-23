@@ -1,10 +1,13 @@
 package app;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
@@ -17,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 
 import java.awt.*;
+import java.io.IOException;
 
 public class Main extends Application {
     Button button;
@@ -26,20 +30,93 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws IOException {
         customiseStage(primaryStage);
 
         // scenesDemo(primaryStage)
-         loadSceneFromFxml(primaryStage);
+//        loadSceneFromFxml(primaryStage);
+//        sceneManager(primaryStage);
+//        logoutScene(primaryStage);
+        imagesScene(primaryStage);
 
         // displays the stage
         primaryStage.show();
+
+        primaryStage.setOnCloseRequest(event -> {
+            // eats or throws away the instruction to close the window
+            // so that window will only close if the user presses ok
+            // without this, window will close regardless of if user
+            // presses ok or cancel
+            // works for alt+F4 also
+            event.consume();
+            logout(primaryStage);
+
+        });
     }
 
-    private void loadSceneFromFxml(Stage primaryStage) throws Exception {
+    /**
+     * this is the method to handle the closing of the stage
+     * @param stage
+     */
+    public void logout(Stage stage) {
+        // create an alert to confirm if user wants to logout
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm logout?");
+        alert.setHeaderText("You're about to logout");
+        alert.setContentText("Do you want to save before exiting?");
+
+        // checks what button the user pressed
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            System.out.println("Logging out");
+            stage.close();
+        }
+
+
+    }
+
+    /**
+     * this is the demo for changing the displayed image upon a button press
+     * @param primaryStage
+     * @throws IOException
+     */
+    private void imagesScene(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ImagesScreen.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    /**
+     * this is a demo for closing the stage using a button
+     * @param primaryStage
+     * @throws IOException
+     */
+    private void logoutScene(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Logout.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    /**
+     * this is a demo for switching between 2 scenes by pressing a button
+     * @param primaryStage
+     * @throws IOException
+     */
+    private void sceneManager(Stage primaryStage) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("/view/LoginPage.fxml"));
+         Scene scene = new Scene(root);
+         primaryStage.setScene(scene);
+    }
+
+    /**
+     * this is a demo for moving a circle in the cardinal directions using buttons
+     * @param primaryStage
+     * @throws IOException
+     */
+    private void loadSceneFromFxml(Stage primaryStage) throws IOException {
         // replace string with FXML file destination
         Parent root = FXMLLoader.load(getClass().getResource("/view/Controller.fxml"));
-        primaryStage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
     }
 
     private void scenesDemo(Stage primaryStage) {
