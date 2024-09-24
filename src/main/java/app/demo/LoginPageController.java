@@ -1,5 +1,6 @@
-package app;
+package app.demo;
 
+import app.HomePageController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -1,4 +1,4 @@
-package app;
+package app.demo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

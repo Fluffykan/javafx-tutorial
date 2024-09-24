@@ -40,7 +40,16 @@ public class Main extends Application {
 //        verifyAge(primaryStage);
 //        checkboxDemo(primaryStage);
 //        radioBtnDemo(primaryStage);
-        datePickerDemo(primaryStage);
+//        datePickerDemo(primaryStage);
+//        colorPickerDemo(primaryStage);
+//        choiceBoxDemo(primaryStage);
+//        sliderDemo(primaryStage);
+//        progressBarDemo(primaryStage);
+//        spinnerDemo(primaryStage);
+//        listViewDemo(primaryStage);
+//        treeViewDemo(primaryStage);
+
+        menuBarDemo(primaryStage);
 
         // displays the stage
         primaryStage.show();
@@ -77,12 +86,70 @@ public class Main extends Application {
 
     }
 
+    private void menuBarDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/MenuBarDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void treeViewDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/TreeViewDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void listViewDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ListViewDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void spinnerDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/SpinnerDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void progressBarDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ProgressBarDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void sliderDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/SliderDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void choiceBoxDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ChoiceBoxDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void colorPickerDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/ColorPickerDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    /**
+     * this is a demo for datepicker and how to extract its value
+     * @param primaryStage
+     * @throws IOException
+     */
     private void datePickerDemo(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/DatePickerDemo.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
     }
 
+    /**
+     * this is a button for using radio buttons and how to use them as a group
+     * @param primaryStage
+     * @throws IOException
+     */
     private void radioBtnDemo(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/RadioButtonDemo.fxml"));
         Scene scene = new Scene(root);

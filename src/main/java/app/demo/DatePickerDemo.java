@@ -1,4 +1,4 @@
-package app;
+package app.demo;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;

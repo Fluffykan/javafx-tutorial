@@ -1,1 +1,1 @@
-This is a starter repo for https://se-education.org/guides/tutorials/javaFx.html
+YT Tutorial [link](https://www.youtube.com/watch?v=9XJicRt_FaI&t=7771s)

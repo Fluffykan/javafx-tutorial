@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.CheckboxDemo">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.demo.CheckboxDemo">
    <children>
       <CheckBox fx:id="checkBox" layoutX="264.0" layoutY="324.0" mnemonicParsing="false" onAction="#toggle" text="ON / OFF" />
       <Label fx:id="state" layoutX="290.0" layoutY="256.0" text="OFF" />
