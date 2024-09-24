@@ -1,14 +1,18 @@
 package app;
 
+import app.demo.KeyEventDemo;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
@@ -18,7 +22,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 
-import java.awt.*;
+import java.io.IOError;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -48,8 +52,10 @@ public class Main extends Application {
 //        spinnerDemo(primaryStage);
 //        listViewDemo(primaryStage);
 //        treeViewDemo(primaryStage);
-
-        menuBarDemo(primaryStage);
+//        menuBarDemo(primaryStage);
+//        keyEventDemo(primaryStage);
+//        mediaPlayerDemo(primaryStage);
+        webViewDemo(primaryStage);
 
         // displays the stage
         primaryStage.show();
@@ -84,6 +90,47 @@ public class Main extends Application {
         }
 
 
+    }
+
+    private void webViewDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/WebViewDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+
+    }
+
+    private void mediaPlayerDemo(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/MediaPlayerDemo.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+    }
+
+    private void keyEventDemo(Stage primaryStage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/KeyEventDemo.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        KeyEventDemo controller = loader.getController();
+        scene.setOnKeyPressed(keyEvent ->  {
+                switch (keyEvent.getCode()) {
+                case UP:
+                    controller.moveUp();
+                    break;
+                case DOWN:
+                    controller.moveDown();
+                    break;
+                case RIGHT:
+                    controller.moveRight();
+                    break;
+                case LEFT:
+                    controller.moveLeft();
+                    break;
+                default:
+                    break;
+                }
+        });
+
+
+        primaryStage.setScene(scene);
     }
 
     private void menuBarDemo(Stage primaryStage) throws IOException {
